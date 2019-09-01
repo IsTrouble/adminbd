@@ -1,0 +1,76 @@
+@charset "utf-8";
+@import "./variable";/*引入配置*/
+@mixin bg_color($color){/*通过该函数设置主题颜色，后期方便统一管理；*/
+ background-color:$color;
+ [data-theme="theme1"] & {
+ background-color:$background-color-theme-red;
+ }
+ [data-theme="theme2"] & {
+ background-color:$background-color-theme-green;
+ }
+ [data-theme="theme3"] & {
+ background-color:$background-color-theme-mauves;
+ }
+ [data-theme="theme4"] & {
+ background-color:$background-color-theme-blue;
+ }
+  [data-theme="theme5"] & {
+ background-color:$background-color-theme-pink;
+ }
+  [data-theme="theme6"] & {
+ background-color:$background-color-theme-bluegreen;
+ }
+  [data-theme="theme7"] & {
+ background-color:$background-color-theme-yellow;
+ }
+}
+
+@mixin fg_color($color){
+ background-color:$color;
+[data-theme="theme1"] & {
+background-color:$foreground-color-theme-red;
+}
+[data-theme="theme2"] & {
+background-color:$foreground-color-theme-green;
+}
+[data-theme="theme3"] & {
+background-color:$foreground-color-theme-mauves;
+}
+[data-theme="theme4"] & {
+background-color:$foreground-color-theme-blue;
+}
+[data-theme="theme5"] & {
+background-color:$foreground-color-theme-pink;
+}
+[data-theme="theme6"] & {
+background-color:$foreground-color-theme-bluegreen;
+}
+[data-theme="theme7"] & {
+background-color:$foreground-color-theme-yellow;
+}
+}
+
+@mixin component_color($color){/*通过该函数设置主题颜色，后期方便统一管理；*/
+ background-color:$color;
+ [data-theme="theme1"] & {
+ background-color:$component-color-theme-red;
+ }
+ [data-theme="theme2"] & {
+ background-color:$component-color-theme-green;
+ }
+ [data-theme="theme3"] & {
+ background-color:$component-color-theme-mauves;
+ }
+ [data-theme="theme4"] & {
+ background-color:$component-color-theme-blue;
+ }
+  [data-theme="theme5"] & {
+ background-color:$component-color-theme-pink;
+ }
+  [data-theme="theme6"] & {
+ background-color:$component-color-theme-bluegreen;
+ }
+  [data-theme="theme7"] & {
+ background-color:$component-color-theme-yellow;
+ }
+}

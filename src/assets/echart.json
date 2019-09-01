@@ -1,0 +1,54 @@
+{
+    "map": {
+        "itemStyle": {
+            "normal": {
+                "areaColor": "#1c3450",
+                "borderColor": "#01edd2",
+                "borderWidth": "1"
+            },
+            "emphasis": {
+                "areaColor": "1c3450",
+                "borderColor": "#01edd2",
+                "borderWidth": "1.5"
+            }
+        },
+        "label": {
+            "normal": {
+                "textStyle": {
+                    "color": "#28544e"
+                }
+            },
+            "emphasis": {
+                "textStyle": {
+                    "color": "rgb(52,158,142)"
+                }
+            }
+        }
+    },
+    "geo": {
+        "itemStyle": {
+            "normal": {
+                "areaColor": "#1c3450",
+                "borderColor": "#01edd2",
+                "borderWidth": "0.5"
+            },
+            "emphasis": {
+                "areaColor": "1c3450",
+                "borderColor": "#01edd2",
+                "borderWidth": "0.8"
+            }
+        },
+        "label": {
+            "normal": {
+                "textStyle": {
+                    "color": "#28544e"
+                }
+            },
+            "emphasis": {
+                "textStyle": {
+                    "color": "rgb(52,158,142)"
+                }
+            }
+        }
+    }
+}
