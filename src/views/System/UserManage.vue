@@ -12,7 +12,7 @@ div.layout-content-main
 				Col(span="6")
 					Button.mr-10(type="primary",icon="ios-search",:loading="loading",@click="options.page=1,search()")|{{$t('search')}}
 	div(style="min-height: 450px")
-		Table(:loading="loading",:stripe="true",:columns="column",:data="list",stripe size="small")
+		Table(:loading="loading",:columns="column",:data="list", size="small")
 	Col(span=6)|&nbsp;
 	Col(span=18)
 		Page(show-elevator :total="options.total" ,:page-size="options.num" ,:current="options.page" ,@on-change="pageChange" show-total )
@@ -159,4 +159,27 @@ export default {
 </script>
 
 <style lang="css">
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
+	}
+	.ivu-form-label-left .ivu-form-item-label{
+		color: #fff;
+	}
 </style>

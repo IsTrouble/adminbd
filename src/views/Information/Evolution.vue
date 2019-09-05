@@ -17,7 +17,7 @@ div.layout-content-main
 				Col(span="2")
 					Button.mr-10(type='success', @click='confirm()' style='' v-if='!upsuccess')|{{$t('upload')}}
 	div(style="min-height: 450px;")
-		Table(@on-selection-change="selection",:columns="columns",:data="data",size="small" stripe)
+		Table(@on-selection-change="selection",:columns="columns",:data="data",size="small")
 	div
 	Col(span='6')|&nbsp;
 	Col(span='18')
@@ -348,5 +348,25 @@ export default {
 <style lang="scss" scoped>
 	.mr-10{
 		margin-left: 5px;
+	}
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>

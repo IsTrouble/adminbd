@@ -12,7 +12,7 @@
 		<div class="OHomeSlider">
 			<div class="SliderBtnList">
 				<button @click="HomeShow('map')" class="SliderBtn">运行状态</button>
-				<button @click="HomeShow('ladder')" class="SliderBtn">电梯状态</button>
+				<button @click="HomeShow('laddermap')" class="SliderBtn">电梯状态</button>
 				<button @click="HomeShow('auditinglist')" class="SliderBtn">审核列表</button>
 				<button @click="HomeShow('maintain')" class="SliderBtn">工单列表</button>
 				<button @click="HomeShow('maintainList')" class="SliderBtn">维保列表</button>
@@ -60,11 +60,22 @@
 				this.$Message.error("请先登录！！！");
 			}
 			this.getportrait();
+			this.getFunction()
 		},
 		mounted() {
 			
 		},
 		methods:{
+			async getFunction(){
+				const res = await this.$api.getFunction({
+					page:1,
+					num:1,
+					id:this.global.roles,
+				})
+				if(res.data.code == 0){
+					this.global.functions = res.data.data.list[0]
+				}
+			},
 			async logout() {
 				let res = await this.$api.logout({})
 				window.$cookie.delete('id')

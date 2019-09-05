@@ -10,7 +10,7 @@
 			</Col>
 		</Row>
 	<div style="min-height:450px; margin-top: 10px;">
-		<Table stripe class="mb-10" :columns="columns" :data="data" size="small"></Table>
+		<Table class="mb-10" :columns="columns" :data="data" size="small"></Table>
 	</div>
 	<Col span="24" style="text-align: center;">
 		<Page show-elevator :total="options.total" :page-size="options.num" :current="options.page" @on-change="pageChange" show-total></Page>
@@ -133,7 +133,7 @@
 								},
 								on: {
 									click: () => {
-										this.print(params.row)
+										this.myprint(params.row)
 									}
 								}
 							}, this.$t('print'))
@@ -147,9 +147,20 @@
 			this.getList()
 		},
 		mounted() {
-			this.print=this.global.functions.print
+			this.getFunction()
 		},
 		methods: {
+			async getFunction(){
+				const res = await this.$api.getFunction({
+					page:1,
+					num:1,
+					id:this.global.roles,
+				})
+				if(res.data.code == 0){
+					this.global.functions = res.data.data.list[0]
+				}
+				this.print=this.global.functions.print
+			},
 		  	handleSearch1 (selectword) {
 		  		this.menu=[];
 		  		var str;
@@ -235,7 +246,7 @@
 				}
 				}
 			},	
-			async print(item) {
+			async myprint(item) {
 				$("#capture").empty();
 				this.id = item.IMEI
 				this.url = `http://server.asynciot.com/company/follow/${item.id}`
@@ -326,5 +337,25 @@
 	}
 	.mr-10{
 		margin-left: 5px;
+	}
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>

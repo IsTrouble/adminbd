@@ -32,7 +32,7 @@
 			span.dialog-footer(slot='footer')
 				Button(type='primary', @click='door = false') {{$t('OK')}}
 		div(style='min-height: 450px; margin-top: 20px;')
-			Table.mb-10(:columns='columns', :data='list' stripe, size='small')
+			Table.mb-10(:columns='columns', :data='list' , size='small')
 		Col(span="24" style="text-align:center;")
 			page.fonts(show-elevator='', :total='totalNumber', :page-size='options.num', :current='options.page', @on-change='pageChange', show-total='')
 </template>
@@ -457,5 +457,25 @@
 	}
 	.fonts{
 		font-size: 12px;
+	}
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>

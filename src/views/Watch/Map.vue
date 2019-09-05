@@ -564,3 +564,8 @@ div
 		font-size: 12px;
 	}
 </style>
+<style>
+	.ivu-tabs-nav .ivu-tabs-tab{
+		color:#fff;
+	}
+</style>

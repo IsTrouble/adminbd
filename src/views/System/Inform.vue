@@ -10,7 +10,7 @@ div.layout-content-main
 		Row(:gutter="30")
 			Col(span="24")
 				div(style="min-height: 450px;")
-					Table(:stripe="true",:columns="column",:data="list",stripe size="small")
+					Table(:columns="column",:data="list", size="small")
 				Col(span=6)|&nbsp;
 				Col(span=18)
 				Page(show-elevator :total="options.total" ,:page-size="options.num" ,:current="options.page" ,@on-change="pageChange" show-total )
@@ -158,5 +158,25 @@ export default{
 
 	.box-header{
 		font-size: 20px;
+	}
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>

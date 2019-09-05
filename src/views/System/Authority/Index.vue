@@ -18,7 +18,7 @@ div.layout-content-main
 						Button.mr-10(type="primary",icon="ios-search",:loading="loading",@click="options.page=1,search()")
 						Input(v-model="options.username",placeholder="请输入搜索内容" style="width:75%;")
 	div(style="min-height: 450px")
-		Table(:loading="loading",:stripe="true",:columns="column",:data="list",stripe size="small")
+		Table(:loading="loading",:columns="column",:data="list", size="small")
 	Col(span=24 style="text-align:center;")
 		Page(show-elevator :total="options.total" ,:page-size="options.num" ,:current="options.page" ,@on-change="pageChange" show-total )
 </template>
@@ -147,5 +147,25 @@ export default {
 <style lang="scss" scoped>
 	.mr-10{
 		margin-right: 10px;
+	}
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>

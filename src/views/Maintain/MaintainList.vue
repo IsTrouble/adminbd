@@ -32,7 +32,7 @@
 		</Form>
 		</div>
 		<div style="min-height: 450px; margin-top: 20px;">
-			<Table stripe class="mb-10" :columns="columns" :data="data" size="small"></Table>
+			<Table class="mb-10" :columns="columns" :data="data" size="small"></Table>
 		</div>
 		<Col span='24' style="text-align: center;">
 		<Page  show-elevator :total="options.total" :page-size="options.num" :current="options.page" @on-change="pageChange" show-total></Page>	  
@@ -452,5 +452,25 @@
 	position: absolute;
 	margin-left: 30%;
 	margin-top: 3%;
+	}
+</style>
+<style>
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>

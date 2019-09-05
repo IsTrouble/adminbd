@@ -17,7 +17,7 @@
 					Button(type="primary" icon="ios-search" @click="search()")|{{$t('search')}}
 					Button.mr-10(type="success",icon="md-add",:loading="loading",@click="goLadder()")|{{$t('new elevator')}}
 		div( style="min-height: 450px; margin-top: 5px;")
-			Table.mb-10( stripe :columns="columns" ,:data="list" size="small")
+			Table.mb-10( :columns="columns" ,:data="list" size="small")
 		Col( span="24" style="text-align: center;")
 			Page( show-elevator :total="total" ,:page-size="query.num" ,:current="query.page" @on-change="pageChange"
 			 show-total)
@@ -281,7 +281,7 @@
 		}
 	}
 </script>
-<style scoped>
+<style>
 	.mb-10 {
 		margin-bottom: 20px;
 	}
@@ -306,5 +306,39 @@
 	}
 	.mr-10{
 		margin-left: 5px;
+	}
+	.ivu-table .ivu-table-row td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-table-small th{
+		background-color: #11406c;
+		color: #fff;
+	}
+	.ivu-table-tip table td{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	/* .ivu-select-selection{
+		background-color: #8aabca;
+		color: #fff;
+	}
+	.ivu-select .ivu-select-dropdown{
+		background-color: #8aabca;
+	}
+	.ivu-select-item{
+		color: #fff;
+	}
+	.ivu-select-item-focus{
+		background-color: #11406c;
+	}
+	.ivu-select-item:hover{
+		background-color: #11406c;
+	} */
+	.ivu-page-total{
+		color: #fff;
+	}
+	.ivu-page-options-elevator{
+		color: #fff;
 	}
 </style>
